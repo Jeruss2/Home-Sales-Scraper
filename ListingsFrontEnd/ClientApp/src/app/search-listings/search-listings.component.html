@@ -1,0 +1,23 @@
+
+
+
+<p>Search homes for sale by entering the name of the neighborhood: </p>
+
+<input type="text" [(ngModel)]="neighborhoodSearchParam" placeholder="neighborhood" />
+
+
+
+<button (click)="GetListingByNeighborhood()">Search</button>
+
+<h1>Listings</h1>
+
+<div *ngIf="listings">
+  <div *ngFor="let listing of listings">
+    <div>Address: {{listing.address}}</div>
+    <div>Neighborhood: {{listing.neighborhood}}</div>
+    <div>Price: {{listing.price}}</div>
+    <div>Beds: {{listing.numBeds}}</div>
+    <div>Bath: {{listing.numBath}}</div>
+    <div>***********************</div>
+  </div>
+</div>

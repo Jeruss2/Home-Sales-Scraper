@@ -1,0 +1,25 @@
+<p>
+  show-listings works!
+</p>
+
+<div *ngIf="listings">
+  <div *ngFor="let listing of listings">
+    <div>Address: {{listing.address}}</div>
+    <div>Neighborhood: {{listing.neighborhood}}</div>
+    <div>Price: {{listing.price}}</div>
+    <div>Beds: {{listing.numBeds}}</div>
+    <div>Bath: {{listing.numBath}}</div>
+    <div>***********************</div>
+  </div>
+</div>
+
+
+
+
+<!--<input type="text" [(ngModel)]="listing.neighborhood" placeholder="neighborhood" />
+<input type="text" [(ngModel)]="listing.address" placeholder="address" />
+<input type="text" [(ngModel)]="listing.price" placeholder="price" />
+<input type="text" [(ngModel)]="listing.numBeds" placeholder="numBeds" />
+<input type="text" [(ngModel)]="listing.numBath" placeholder="numBath" />
+
+<button (click)="AddListing()">add listing</button>-->
