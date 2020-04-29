@@ -10,13 +10,6 @@ namespace ListingsFrontEnd.Controllers
     [ApiController]
     public class ListingsController : ControllerBase
     {
-        //private void Connect()
-        //{
-        //    using SqlConnection sqlConn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
-        //    sqlConn.Open();
-        //}
-
-        // GET: api/Listings
         [HttpGet]
         public IEnumerable<Listing> Get()
         {

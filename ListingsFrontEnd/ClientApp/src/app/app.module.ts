@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ShowListingsComponent } from './show-listings/show-listings.component';
 import { SearchListingsComponent } from './search-listings/search-listings.component';
 import { ExportComponent } from './export/export.component';
+import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 
 @NgModule({
   declarations: [
@@ -19,10 +19,10 @@ import { ExportComponent } from './export/export.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
     ShowListingsComponent,
     SearchListingsComponent,
-    ExportComponent
+    ExportComponent,
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -55,7 +55,11 @@ namespace Scraper
                 error.ExceptionMessage = e.Message;
                 error.StackTrace = e.StackTrace;
 
-                scraperDal.SaveErrorLog(error);
+
+
+
+
+                //scraperDal.SaveErrorLog(error);
             }
 
 

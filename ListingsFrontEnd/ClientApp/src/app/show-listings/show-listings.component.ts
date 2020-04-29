@@ -12,7 +12,7 @@ export class ShowListingsComponent implements OnInit {
   public listings:Listing[];
 
 
-  //public listing:Listing = new Listing();
+  
 
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class ShowListingsComponent implements OnInit {
   }
 
   public ShowListing(): boolean {
-    console.log("hey im here!");
+    
 
     this.http.get<Listing[]>("api/Listings").subscribe(result => {this.listings = result; console.log(result)});
 
