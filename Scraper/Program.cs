@@ -59,7 +59,7 @@ namespace Scraper
 
 
 
-                //scraperDal.SaveErrorLog(error);
+                scraperDal.SaveErrorLog(error);
             }
 
 
@@ -96,34 +96,10 @@ namespace Scraper
 
             string blob = string.Join(' ', data);
 
-            //join the blob with a space
-
-
-            //if (blob.Contains('{'))
-            //    blob = blob.Substring(0, blob.LastIndexOf('{'));
-
-
-
-
-
             blob = blob.Replace("Open 2/23 ", "");
 
-            //    .Replace("Re/Max Properties East", "")
-            //    .Replace("Re/Max Associates Of Louisville", "")
-            //    .Replace("Wakefield Reutlinger Realtors", "")
-            //    .Replace("Exp Realty Llc", "")
-            //    .Replace("Champion Properties", "")
-            //    .Replace("Red Edge Realty", "")
-            //    .Replace("Semonin Realtor", "")
-            //    .Replace("Mayer Realtors", "")
-            //    .Replace("Mary Jane Halbleib Realtors", "");
-            //.Replace("", "")
-            //.Replace("{"@context": "https://schema.org/","@type": "Event","name": "Open House - 2:00 PM - 4:00 PM","description": "Open House","url": "https://www.joehaydenrealtor.com/homes/435-whiteheath-ln-louisville-ky-40243/11502886_spid/","startDate": "2020-02-23T14:00:00-5:00","endDate": "2020-02-23T16:00:00-5:00","location": {"@type": "Place","name": "435 Whiteheath Ln","address": {"@type": "PostalAddress","streetAddress": "435 Whiteheath Ln","postalCode": "40243","addressLocality": "Louisville","addressRegion": "KY"},"geo": {"@type": "GeoCoordinates","latitude": 38.234731,"longitude": -85.558343}}}", "");
-
             blob = blob.Remove(blob.LastIndexOf("Ft.") + 3);
-            //blob = blob.Remove(blob.Substring(blob.IndexOf("$")));
-
-
+            
             return blob;
         }
 

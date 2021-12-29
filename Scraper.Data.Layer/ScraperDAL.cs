@@ -9,7 +9,7 @@ namespace Scraper.Data.Layer
     {
         public void SaveListings(IEnumerable<Listing> listings)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             foreach (var listing in listings)
@@ -35,7 +35,7 @@ namespace Scraper.Data.Layer
 
         public void SaveDataListingBlob(string listing)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -55,7 +55,7 @@ namespace Scraper.Data.Layer
 
         public void SaveErrorLog(ErrorLog error)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -76,7 +76,7 @@ namespace Scraper.Data.Layer
         {
             List<ListingBlobs> blobs = new List<ListingBlobs>();
 
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -111,7 +111,7 @@ namespace Scraper.Data.Layer
 
         public void MarkProcessed(int listingBlobId)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             SqlCommand cmd = new SqlCommand();

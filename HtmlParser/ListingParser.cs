@@ -38,6 +38,11 @@ namespace HtmlParser
 
                     string neighborhood = nodes[0].SelectNodes("//*[contains(@class, 'si-listing__neighborhood-place')]").ToList()[0].InnerText;
 
+                    if (neighborhood == "&nbsp;")
+                    {
+                        neighborhood = "Not Available";
+                    }
+
                     Listing l = new Listing()
                     {
                         Address = address,

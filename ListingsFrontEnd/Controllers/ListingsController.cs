@@ -14,7 +14,7 @@ namespace ListingsFrontEnd.Controllers
         public IEnumerable<Listing> Get()
         {
             SqlConnection connection =
-                new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+                new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
 
@@ -54,7 +54,7 @@ namespace ListingsFrontEnd.Controllers
                 List<Listing> listings = new List<Listing>();
 
                 using (SqlConnection connection =
-                    new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;"))
+                    new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;"))
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
@@ -97,7 +97,7 @@ namespace ListingsFrontEnd.Controllers
         [HttpPost]
         public void AddListing([FromBody] Listing listing)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
             connection.Open();
 
             SqlCommand cmd = new SqlCommand();

@@ -20,7 +20,7 @@ namespace ListingsFrontEnd.Controllers
             try
             {
                 SqlConnection connection =
-                    new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Josh;Integrated Security=SSPI;");
+                    new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
                 connection.Open();
 
                 SqlCommand cmd = new SqlCommand();
