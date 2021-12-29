@@ -30,7 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HtmlParser\HtmlParser.csproj" />
+    <ProjectReference Include="..\Scraper.Data.Layer\Scraper.Data.Layer.csproj" />
     <ProjectReference Include="..\ScraperModels\ScraperModels.csproj" />
+    <ProjectReference Include="..\Scraper\Scraper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

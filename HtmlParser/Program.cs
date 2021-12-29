@@ -2,6 +2,7 @@
 using ScraperModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HtmlParser
 {
@@ -19,6 +20,13 @@ namespace HtmlParser
 
 
                 List<Listing> parsedListings = parser.ParseListings(listingBlobs);
+
+                //var listInDb = scraperDal.GetListingsInDB();
+
+                //foreach (var parsedListing in parsedListings)
+                //{
+                   
+                //}
 
 
                 scraperDal.SaveListings(parsedListings);

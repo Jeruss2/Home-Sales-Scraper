@@ -22,7 +22,7 @@ namespace ListingsFrontEnd.Controllers
 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT Neighborhood, Address, Price, NumBeds, NumBath FROM Listing";
+            cmd.CommandText = "SELECT DISTINCT Address, Neighborhood, Price, NumBeds, NumBath FROM Listing";
 
             cmd.Connection = connection;
 
@@ -33,8 +33,8 @@ namespace ListingsFrontEnd.Controllers
             while (reader.Read())
             {
                 Listing listing = new Listing();
-                listing.Neighborhood = reader.GetString(0);
-                listing.Address = reader.GetString(1);
+                listing.Neighborhood = reader.GetString(1);
+                listing.Address = reader.GetString(0);
                 listing.Price = reader.GetString(2);
                 listing.NumBeds = int.Parse(reader.GetString(3));
                 listing.NumBath = reader.GetString(4);
@@ -58,7 +58,7 @@ namespace ListingsFrontEnd.Controllers
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd.CommandText = "SELECT Neighborhood, Address, Price, NumBeds, NumBath FROM Listing WHERE Neighborhood = @neighborhood";
+                        cmd.CommandText = "SELECT DISTINCT Address, Neighborhood, Price, NumBeds, NumBath FROM Listing WHERE Neighborhood = @neighborhood";
                         cmd.Parameters.AddWithValue("@neighborhood", neighborhood);
                         cmd.Connection = connection;
                         connection.Open();
@@ -70,8 +70,8 @@ namespace ListingsFrontEnd.Controllers
                         while (reader.Read())
                         {
                             Listing listing = new Listing();
-                            listing.Neighborhood = reader.GetString(0);
-                            listing.Address = reader.GetString(1);
+                            listing.Neighborhood = reader.GetString(1);
+                            listing.Address = reader.GetString(0);
                             listing.Price = reader.GetString(2);
                             listing.NumBeds = int.Parse(reader.GetString(3));
                             listing.NumBath = reader.GetString(4);

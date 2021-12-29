@@ -126,5 +126,39 @@ namespace Scraper.Data.Layer
             cmd.Connection = connection;
             cmd.ExecuteNonQuery();
         }
+
+
+        public List<Listing> GetListingsInDB()
+        {
+            using SqlConnection connection =
+                new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=Scraper;Integrated Security=SSPI;");
+
+            string sqlQuery = "Select Neighborhood, Address, Price, NumBeds, NumBath from Listings";
+
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            var listInDb = new List<Listing>();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Listing listingInDb = new Listing();
+
+                    listingInDb.Neighborhood = reader.GetString(0);
+                    listingInDb.Address = reader.GetString(1);
+                    listingInDb.Price = reader.GetString(2);
+                    listingInDb.NumBeds = int.Parse(reader.GetString(3));
+                    listingInDb.NumBath = reader.GetString(4);
+
+                    listInDb.Add(listingInDb);
+                }
+            }
+
+            return listInDb;
+        }
     }
 }
