@@ -51,24 +51,14 @@ namespace ListingsFrontEnd.Controllers
 
                 Console.WriteLine(listingJSON);
 
-                System.IO.File.WriteAllText("export_data.txt", listingJSON);
-
-                //var net = new System.Net.WebClient();
-                //var data = Encoding.ASCII.GetBytes(listingJSON);
-                //var content = new System.IO.MemoryStream(data);
-                //var contentType = "APPLICATION/octet-stream";
-                //var fileName = "zzzz.txt";
-
-
-                //System.IO.File.WriteAllBytes(@"D:\OneDrive\Desktop", data);
-
+                System.IO.File.WriteAllText($"export_data_{DateTime.Now.Month}-{DateTime.Now.Day}-{DateTime.Now.Year}.txt", listingJSON);
 
                 var data = Encoding.ASCII.GetBytes(listingJSON);
 
                 return new FileContentResult(data, new
                     MediaTypeHeaderValue("application/octet"))
                 {
-                    FileDownloadName = "export_data.txt"
+                    FileDownloadName = $"export_data_{DateTime.Now.Month}-{DateTime.Now.Day}-{DateTime.Now.Year}.txt"
                 };
             }
             catch (Exception e)
@@ -86,4 +76,3 @@ namespace ListingsFrontEnd.Controllers
 
 
 
-//@"D:\OneDrive\Desktop", listingJSON
